@@ -29,10 +29,10 @@ void iter(vector<vector<double>>& matrix,  vector<double>& y_vector, size_t n, v
             }
         }
 
-        bool flag = true;
+        bool exit_conditions = true;
         for (size_t i = 0; i != n - 1; ++i) {
             if (abs(Xn[i] - result[i]) > eps) {
-                flag = false;
+                exit_conditions = false;
                 break;
             }
         }
@@ -41,7 +41,7 @@ void iter(vector<vector<double>>& matrix,  vector<double>& y_vector, size_t n, v
             result[i] = Xn[i];
         }
 
-        if (flag)
+        if (exit_conditions)
             break;
     } while (true);
 
